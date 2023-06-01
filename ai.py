@@ -3,7 +3,7 @@ import webbrowser
 import pyttsx3
 
 engine = pyttsx3.init()
-engine.setProperty('volume', 0.05 )
+engine.setProperty('volume', 0.1 )
 engine.setProperty('rate', 190)
 
 def rozpoznaj(msg="Powiedz coś!"):
