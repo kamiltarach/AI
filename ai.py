@@ -1,9 +1,14 @@
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
+import subprocess
+import requests
+import json
+from win10toast_persist import ToastNotifier
+from datetime import date
 
 engine = pyttsx3.init()
-engine.setProperty('volume', 0.1 )
+engine.setProperty('volume', 1.0 )
 engine.setProperty('rate', 190)
 
 def rozpoznaj(msg="Powiedz coś!"):
@@ -28,3 +33,7 @@ if("otwórz" in text and word_list[0] == "otwórz") or ("uruchom" in text and wo
         engine.say("Otwieram przeglądarke")
         engine.runAndWait()
         webbrowser.open_new_tab("https://www.google.com/")
+
+elif text =="Jaka jest pogoda":
+    subprocess.call("explorer.exe shell:appsFolder\\Microsoft.BingWeather_8wekyb3d8bbwe!App", shell=True, 
+                    stdout=subprocess.PIPE)
