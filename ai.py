@@ -30,10 +30,15 @@ text = rozpoznaj()
 word_list = text.split(" ")
 if("otwórz" in text and word_list[0] == "otwórz") or ("uruchom" in text and word_list[0] == "uruchom"):
     if "przeglądarkę" in text:
-        engine.say("Otwieram przeglądarke")
+        engine.say("Otwieram Google Chrome")
         engine.runAndWait()
         webbrowser.open_new_tab("https://www.google.com/")
-
+    
+    if "disney plus" in text:
+        engine.say("Otwieram Disney plus!")
+        engine.runAndWait()
+        webbrowser.open_new_tab("https://www.disneyplus.com/pl-pl/home")
+        
 elif text =="Jaka jest pogoda":
     
     api_key = "e2b5320f9a8e8ce7371dca2624000eae"
